@@ -1,52 +1,40 @@
-# Prerequisites
-*.d
+#include <stdio.h>
 
-# Object files
-*.o
-*.ko
-*.obj
-*.elf
+int main(){
 
-# Linker output
-*.ilk
-*.map
-*.exp
+    int sayi[8];
+printf("8 tane tamsayi giriniz:\n\n");
+int eb=0,ek;
+int temp;
 
-# Precompiled Headers
-*.gch
-*.pch
+for (int i = 0; i < 8; i++)
+{ 
+   scanf("%d",&temp);
+   sayi[i]=temp;
+}
 
-# Libraries
-*.lib
-*.a
-*.la
-*.lo
+for(int i=0; i<8; i++)printf("%d ",sayi[i]);
 
-# Shared objects (inc. Windows DLLs)
-*.dll
-*.so
-*.so.*
-*.dylib
 
-# Executables
-*.exe
-*.out
-*.app
-*.i*86
-*.x86_64
-*.hex
+printf("");
 
-# Debug files
-*.dSYM/
-*.su
-*.idb
-*.pdb
+for (int i = 0; i<7; i++){
+    for (int i = 0; i < 7; i++)
+    {
+      
+        if (sayi[i+1]>sayi[i])
+        {
+            eb=sayi[i+1];
+            sayi[i+1]=sayi[i];
+            sayi[i]=eb; 
 
-# Kernel Module Compile Results
-*.mod*
-*.cmd
-.tmp_versions/
-modules.order
-Module.symvers
-Mkfile.old
-dkms.conf
+        }
+    }
+
+        for(int i=0; i<8; i++)printf("%d ",sayi[i]);printf("\n");
+}   
+
+
+//for(int i=0; i<8; i++)printf("%d ",sayi[i]);
+    return 0;
+}
